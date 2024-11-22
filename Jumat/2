@@ -1,1 +1,29 @@
+import pygame
 
+def scale_image(img, factor):
+    """
+    Scales an image by a given factor.
+
+    Args:
+        img (pygame.Surface): The image to scale.
+        factor (float): The scaling factor.
+
+    Returns:
+        pygame.Surface: The scaled image.
+    """
+    size = round(img.get_width() * factor), round(img.get_height() * factor)
+    return pygame.transform.scale(img, size)
+
+def blit_rotate_center(win, image, top_left, angle):
+    """
+    Draws an image rotated around its center.
+
+    Args:
+        win (pygame.Surface): The surface to draw on.
+        image (pygame.Surface): The image to rotate.
+        top_left (tuple): The top-left position to place the image.
+        angle (float): The rotation angle in degrees.
+    """
+    rotated_image = pygame.transform.rotate(image, angle)
+    new_rect = rotated_image.get_rect(center=image.get_rect(topleft=top_left).center)
+    win.blit(rotated_image, new_rect.topleft)
