@@ -1,1 +1,92 @@
+using System;
 
+class Virus
+{
+    public string nama;
+    public int size;
+    public int banyak;
+
+    public void menyebar()
+    {
+        Console.WriteLine("{0} menyebar dengan {1} Mbps {2}", this.nama, this.banyak, this.size);
+    }
+}
+
+class Trojan
+{
+    public string nama;
+    public int ukuran;
+    public int kemampuan;
+
+    public void menyebar()
+    {
+        Console.WriteLine("{0} menyebar dengan file {1} MB", this.nama, this.ukuran);
+    }
+
+    public void menyusupBios()
+    {
+        Console.WriteLine("{0} menyusup dalam BIOS!", this.nama);
+    }
+
+    public void matikan()
+    {
+        Console.WriteLine("{0} mematikan sistem", this.nama);
+    }
+}
+
+class Worm
+{
+    public string nama;
+    public int kapasitas;
+    public int kecepatan;
+
+    public void menyebar()
+    {
+        Console.WriteLine("{0} menyebar dengan file {1} MB", this.nama, this.kapasitas);
+    }
+
+    public void menghancurkanRegistry()
+    {
+        Console.WriteLine("{0} menghancurkan Registry", this.nama);
+    }
+
+    public void menghapusNTLDR()
+    {
+        Console.WriteLine("{0} menghapus NTLDR", this.nama);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Virus virus1 = new Virus();
+        Trojan trojan1 = new Trojan();
+        Worm worm1 = new Worm();
+
+        virus1.nama = "Stuxnet32.exe";
+        virus1.size = 4;
+        virus1.banyak = 5;
+
+        trojan1.nama = "Shutdown32.exe";
+        trojan1.ukuran = 3;
+        trojan1.kemampuan = 5;
+
+        worm1.nama = "Brontox.exe";
+        worm1.kapasitas = 5;
+        worm1.kecepatan = 23;
+
+        Console.WriteLine("Stop setiap 15 menit:");
+        Console.WriteLine("Nama Virus: {0} kapasitas: {1} MB", virus1.nama, virus1.size);
+        Console.WriteLine("Nama Trojan: {0} kapasitas: {1} MB", trojan1.nama, trojan1.size);
+
+        virus1.menyebar();
+        trojan1.menyebar();
+        trojan1.menyusupBios();
+        trojan1.matikan();
+
+        worm1.menyebar();
+        worm1.menghancurkanRegistry();
+        worm1.menghapusNTLDR();
+    }
+}
