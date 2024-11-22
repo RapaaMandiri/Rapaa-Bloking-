@@ -1,1 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace komisi_tukar_uang
+{
+    class aplikasi
+    {
+        static void Main(string[] args)
+        {
+            int tukar1, tukar2, komisi, jumlah, lembar, sisa;
+            Console.WriteLine("Program Tukar Uang");
+            Console.Write("Masukkan Tukar Pertama = ");
+            tukar1 = int.Parse(Console.ReadLine());
+            Console.Write("Masukkan Tukar Kedua = ");
+            tukar2 = int.Parse(Console.ReadLine());
+
+            komisi = (tukar1 * 10) / 100;
+            jumlah = tukar1 - komisi;
+
+            lembar = jumlah / tukar2;
+            sisa = jumlah - (lembar * tukar2);
+
+            Console.WriteLine("Komisi {0} dan Lembar {1} Sisa= {2}", komisi, lembar, sisa);
+        }
+    }
+}
