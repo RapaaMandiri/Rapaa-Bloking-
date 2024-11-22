@@ -1,1 +1,15 @@
+import tkinter as tk
 
+# Create the main window
+root = tk.Tk()
+
+# Create a label and place it at specific coordinates
+label1 = tk.Label(root, text="Label 1")  # Fixed the variable name and syntax
+label1.place(x=10, y=10)
+
+# Create a button and place it with specific size and coordinates
+button1 = tk.Button(root, text="Tombol 1")  # Fixed syntax
+button1.place(x=50, y=50, width=100, height=30)
+
+# Run the main loop
+root.mainloop()
