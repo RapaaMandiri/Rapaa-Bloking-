@@ -1,1 +1,131 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+
+namespace luas_keliling
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("-----------------");
+            Console.WriteLine("Program untuk menghitung = ");
+            Console.WriteLine("1. Bujur sangkar ");
+            Console.WriteLine("2. Persegi panjang ");
+            Console.WriteLine("3. Lingkaran ");
+            Console.WriteLine("-----------------");
+            Console.Write("\n");
+
+            string c;
+            double r, L, K, p, l, s;
+            Console.Write(" Pilihan Anda = ");
+            c = Console.ReadLine();
+
+            if (c == "1")
+            {
+                Console.WriteLine("Anda telah memilih Bujur Sangkar");
+                Console.WriteLine("Pilih hitung luas atau keliling?");
+                Console.WriteLine("a. Luas");
+                Console.WriteLine("b. Keliling");
+                Console.Write("Saya memilih = ");
+                c = Console.ReadLine();
+
+                if (c == "a")
+                {
+                    Console.WriteLine("Anda memilih luas Bujur Sangkar");
+                    Console.Write("Masukkan sisi = ");
+                    s = double.Parse(Console.ReadLine());
+                    L = s * s;
+                    Console.WriteLine("Luas Bujur Sangkar = " + L.ToString());
+                }
+                else if (c == "b")
+                {
+                    Console.WriteLine("Anda memilih keliling Bujur Sangkar");
+                    Console.Write("Masukkan sisi = ");
+                    s = double.Parse(Console.ReadLine());
+                    K = 4 * s;
+                    Console.WriteLine("Keliling Bujur Sangkar = " + K.ToString());
+                }
+                else
+                {
+                    Console.WriteLine("Pilihan tidak valid");
+                }
+            }
+            else if (c == "2")
+            {
+                Console.WriteLine("Anda telah memilih Persegi Panjang");
+                Console.WriteLine("Pilih hitung luas atau keliling?");
+                Console.WriteLine("a. Luas");
+                Console.WriteLine("b. Keliling");
+                Console.Write("Saya memilih = ");
+                c = Console.ReadLine();
+
+                if (c == "a")
+                {
+                    Console.WriteLine("Anda memilih luas Persegi Panjang");
+                    Console.Write("Masukkan panjang = ");
+                    p = double.Parse(Console.ReadLine());
+                    Console.Write("Masukkan lebar = ");
+                    l = double.Parse(Console.ReadLine());
+                    L = p * l;
+                    Console.WriteLine("Luas Persegi Panjang = " + L.ToString());
+                }
+                else if (c == "b")
+                {
+                    Console.WriteLine("Anda memilih keliling Persegi Panjang");
+                    Console.Write("Masukkan panjang = ");
+                    p = double.Parse(Console.ReadLine());
+                    Console.Write("Masukkan lebar = ");
+                    l = double.Parse(Console.ReadLine());
+                    K = 2 * (p + l);
+                    Console.WriteLine("Keliling Persegi Panjang = " + K.ToString());
+                }
+                else
+                {
+                    Console.WriteLine("Pilihan tidak valid");
+                }
+            }
+            else if (c == "3")
+            {
+                Console.WriteLine("Anda telah memilih Lingkaran");
+                Console.WriteLine("Pilih hitung luas atau keliling?");
+                Console.WriteLine("a. Luas");
+                Console.WriteLine("b. Keliling");
+                Console.Write("Saya memilih = ");
+                c = Console.ReadLine();
+
+                if (c == "a")
+                {
+                    Console.WriteLine("Anda memilih luas Lingkaran");
+                    Console.Write("Masukkan jari-jari = ");
+                    r = double.Parse(Console.ReadLine());
+                    L = 22 * r * r / 7;
+                    Console.WriteLine("Luas Lingkaran dengan phi (22/7) = " + L.ToString());
+                    L = 3.14 * r * r;
+                    Console.WriteLine("Luas Lingkaran dengan phi (3.14) = " + L.ToString());
+                }
+                else if (c == "b")
+                {
+                    Console.WriteLine("Anda memilih keliling Lingkaran");
+                    Console.Write("Masukkan jari-jari = ");
+                    r = double.Parse(Console.ReadLine());
+                    K = 2 * 3.14 * r;
+                    Console.WriteLine("Keliling Lingkaran = " + K.ToString());
+                }
+                else
+                {
+                    Console.WriteLine("Pilihan tidak valid");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Pilihan tidak valid");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
